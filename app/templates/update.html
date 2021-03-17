@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+.btn1:hover{
+    background-color: green;
+}
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-4" style="padding:20px 300px">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 30rem;" >
+                <div class="card-body ">
+                    <h2 class="card-title text-center">Edit TODO Details</h2><br>
+                    <form method="POST">{% csrf_token %}
+                        {{form|crispy}}
+                        <button type="submit" class="btn btn-primary btn1">Update Here <i class="fa fa-plus-circle" aria-hidden="true"></i> </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
